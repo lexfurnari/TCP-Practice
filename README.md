@@ -1,4 +1,3 @@
-# csci356-p3-template
 Experiments with reliable transport over UDP
 
 * datasource.py - Python code to generate example data packets.
