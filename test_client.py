@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 #
+# Provided lient code for testing
+#
 # Author: K. Walsh <kwalsh@cs.holycross.edu>
 # Date: 4 April 2017
 #
