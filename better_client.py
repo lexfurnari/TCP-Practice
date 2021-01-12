@@ -82,15 +82,6 @@ def main(host, port):
             if xpctACKnum < 0:
                 continue
 
-        #tElapsed = time.time() - tStart
-        #tRemaining = 0.5 - tElapsed
-        # if tRemaining <= 0:
-            #print("---Yeah idk what happened here chief; might need to retransmit")
-            #print("---or make the timeout window bigger")
-        # else:
-            # wait for an ACK && adding timeouts
-            # Try: if there we get an ACK, receive it
-            # Except: if we do not get an ACK back, retransmit it
         print("Trying to receive an ACK...")
         try:
             while True:
@@ -132,18 +123,10 @@ def main(host, port):
                 print("Sent retransmission of packet # " + str(x))
                 if verbose >= 3 or (verbose >= 1 and x < 5 or x % 1000 == 0):
                     print("Sent packet with seqno %d" % (x))
+                    
         # At this point either an ACK has been received OR
         # The three retransmissions have failed. In either case,
         # send the next packet
-        #body = datasource.wait_for_data(seqno)
-
-        # make a header, create a packet, and send it
-        #hdr = bytearray(struct.pack(">II", magic, seqno))
-        #pkt = hdr + body
-        #tSend = time.time()
-        #s.sendto(pkt, (host, port))
-        # if verbose >= 3 or (verbose >= 1 and seqno < 5 or seqno % 1000 == 0):
-           # print("Sent packet with seqno %d" % (seqno))
 # ---------------------------------------------------------------------------------------------------
     end = time.time()
     elapsed = end - tStart
