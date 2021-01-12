@@ -1,7 +1,13 @@
-Experiments with reliable transport over UDP
+Experiments with reliable transport over UDP: 
+
+We added TCP like protocols to better_client.py and deployed the client and server code on Amazon 
+Cloud Machines. Some of the servers had issues such as delayed sending, dropped data and out of order 
+sending. We implmeneted timeouts to handle lostand delayed data. If the packets were not received,
+those packets were retransmitted. Our code does not handle out of order packets. All packets are
+received, however,changes to the server code were not made to rearrange the packets as they came in. 
 
 * datasource.py - Python code to generate example data packets.
-* client\_saw.py - A bare-bones stop-and-wait protocol client.
+* better_client.py - Originally a bare-bones stop-and-wait protocol client. Now implements timeouts and retransmission. 
 * server.py - A server that receives and ACKs packets.
 * datasink.py - Python code to consume and analyze arriving packets.
 * trace.py - Python code to log packet times and sequence numbers.
